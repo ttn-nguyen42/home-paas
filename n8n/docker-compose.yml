@@ -1,18 +1,26 @@
 services:
   n8n:
-    image: docker.n8n.io/n8nio/n8n:1.94.2
-    restart: always
+    image: docker.n8n.io/n8nio/n8n:1.94.1
     environment:
       - N8N_HOST=${N8N_HOST}
       - N8N_PORT=${N8N_PORT}
       - N8N_PROTOCOL=http
-      - NODE_ENV=production
+      - NODE_ENV=prod
       - WEBHOOK_URL=https://${N8N_HOST}/
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
       - N8N_SECURE_COOKIE=false
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=${DB_POSTGRESDB_HOST}
+      - DB_POSTGRESDB_PORT=${DB_POSTGRESDB_PORT}
+      - DB_POSTGRESDB_DATABASE=neightn
+      - DB_POSTGRESDB_USER=${DB_POSTGRESDB_USER}
+      - DB_POSTGRESDB_PASSWORD=${DB_POSTGRESDB_PASSWORD}
+      - N8N_RUNNERS_ENABLED=true
     volumes:
       - n8n_data:/home/node/.n8n
-    
-
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker
 volumes:
-  n8n_data:
+  n8n_data: {}
