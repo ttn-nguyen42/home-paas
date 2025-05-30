@@ -17,13 +17,14 @@ services:
       - DB_POSTGRESDB_PASSWORD=${DB_POSTGRESDB_PASSWORD}
       - N8N_RUNNERS_ENABLED=true
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
-    expose:
-      - 5678
     volumes:
       - n8n_data:/home/node/.n8n
+    expose:
+      - 5678
     deploy:
       placement:
         constraints:
           - node.role == worker
+    
 volumes:
   n8n_data: {}
