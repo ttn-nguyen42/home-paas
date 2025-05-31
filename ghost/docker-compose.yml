@@ -8,6 +8,7 @@ services:
       - database__connection__user=${DB_USER}
       - database__connection__password=${DB_PASSWORD}
       - database__connection__database=${DB_NAME}
+      - database__connection__port=${DB_PORT}
       - server__port=8632
       - url=https://${GHOST_HOST}
       - server__host=0.0.0.0
