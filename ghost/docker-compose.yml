@@ -10,7 +10,7 @@ services:
       - database__connection__database=${DB_NAME}
       - database__connection__port=${DB_PORT}
       - server__port=8632
-      - url=https://${GHOST_HOST}
+      - url=https://${GHOST_HOST}/
       - server__host=0.0.0.0
       - admin__url=https://${GHOST_ADMIN_HOST}
       - mail__transport=SMTP
