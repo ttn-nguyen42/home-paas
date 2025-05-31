@@ -24,5 +24,9 @@ services:
       - 8632
     volumes:
       - ghost_data:/var/lib/ghost/content
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker
 volumes:
   ghost_data: {}
