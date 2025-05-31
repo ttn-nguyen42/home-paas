@@ -10,7 +10,7 @@ services:
     volumes:
       - docmost_data:/app/data/storage
     expose:
-      - 5698
+      - ${DOCMOST_PORT}
     deploy:
       placement:
         constraints:
