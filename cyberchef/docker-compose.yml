@@ -1,6 +1,6 @@
 services:
   cyberchef:
-    image: gchq/cyberchef:latest
+    image: ghcr.io/gchq/cyberchef:latest
     deploy:
       placement:
         constraints:
