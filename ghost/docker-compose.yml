@@ -12,7 +12,6 @@ services:
       - server__port=8632
       - url=https://${GHOST_HOST}/
       - server__host=0.0.0.0
-      - admin__url=https://${GHOST_ADMIN_HOST}
       - mail__transport=SMTP
       - mail__options__host=${MAIL_HOST}
       - mail__options__port=${MAIL_PORT}
