@@ -6,11 +6,11 @@ services:
       - APP_SECRET=${APP_SECRET}
       - DATABASE_URL=postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}
       - REDIS_URL=redis://${REDIS_HOST}:${REDIS_PORT}/${REDIS_DB}
-      - PORT=${DOCMOST_PORT}
+      - PORT=5698
     volumes:
       - docmost_data:/app/data/storage
     expose:
-      - ${DOCMOST_PORT}
+      - 5698
     deploy:
       placement:
         constraints:

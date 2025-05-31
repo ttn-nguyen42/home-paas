@@ -3,7 +3,7 @@ services:
     image: docker.n8n.io/n8nio/n8n:1.94.1
     environment:
       - N8N_HOST=${N8N_HOST}
-      - N8N_PORT=${N8N_PORT}
+      - N8N_PORT=5678
       - N8N_PROTOCOL=http
       - NODE_ENV=production
       - WEBHOOK_URL=https://${N8N_HOST}/
@@ -20,7 +20,7 @@ services:
     volumes:
       - n8n_data:/home/node/.n8n
     expose:
-      - ${N8N_PORT}
+      - 5678
     deploy:
       placement:
         constraints:
