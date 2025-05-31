@@ -12,6 +12,13 @@ services:
       - url=https://${GHOST_HOST}
       - server__host=0.0.0.0
       - admin__url=https://${GHOST_ADMIN_HOST}
+      - mail__transport=SMTP
+      - mail__options__host=${MAIL_HOST}
+      - mail__options__port=${MAIL_PORT}
+      - mail__from=${MAIL_FROM}
+      - mail__options__secure=${MAIL_SECURE}
+      - mail__options__auth__user=${MAIL_USER}
+      - mail__options__auth__pass=${MAIL_PASSWORD}
     expose:
       - 8632
     volumes:
