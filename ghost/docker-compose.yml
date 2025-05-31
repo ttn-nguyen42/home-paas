@@ -3,7 +3,7 @@ services:
     image: ghost:alpine
     environment:
       - NODE_ENV=production
-      - database__client=postgres
+      - database__client=mysql
       - database__connection__host=${DB_HOST}
       - database__connection__user=${DB_USER}
       - database__connection__password=${DB_PASSWORD}
