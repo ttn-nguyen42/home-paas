@@ -20,7 +20,6 @@ services:
       - mail__options__auth__user=${MAIL_USER}
       - mail__options__auth__pass=${MAIL_PASSWORD}
       - mail__options__service=${MAIL_SERVICE}
-      - mail__tls__ciphers=${MAIL_CIPHERS}
     expose:
       - 8632
     volumes:
