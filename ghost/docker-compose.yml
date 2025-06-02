@@ -16,7 +16,6 @@ services:
       - mail__options__host=${MAIL_HOST}
       - mail__options__port=${MAIL_PORT}
       - mail__from=${MAIL_FROM}
-      - mail__options__secure=${MAIL_SECURE}
       - mail__options__auth__user=${MAIL_USER}
       - mail__options__auth__pass=${MAIL_PASSWORD}
       - mail__options__service=${MAIL_SERVICE}
