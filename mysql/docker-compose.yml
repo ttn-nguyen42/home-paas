@@ -1,6 +1,7 @@
 services:
   mysql:
     image: mysql:8.0-debian
+    command: ["mysqld", "--ngram_token_size=1"]
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
