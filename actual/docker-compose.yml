@@ -4,11 +4,14 @@ services:
   actual-server:
     image: actualbudget/actual-server:latest
     container_name: actual-server
-    ports:
-      - "5006:5006"
     volumes:
       - actual-data:/data
     restart: unless-stopped
-
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker
+    expose:
+      - 5060
 volumes:
   actual-data:
