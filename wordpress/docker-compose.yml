@@ -14,6 +14,7 @@ services:
       - WORDPRESS_CONFIG_EXTRA=
       - WORDPRESS_MEMORY_LIMIT=1024M
       - WORDPRESS_MAX_EXECUTION_TIME=300
+      - WORDPRESS_DEBUG_DISPLAY=false
     expose:
       - 80
     volumes:
