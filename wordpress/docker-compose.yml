@@ -1,0 +1,27 @@
+services:
+  wordpress:
+    image: wordpress:php8.4-apache
+    environment:
+      - WORDPRESS_DB_HOST=${MYSQL_HOST}
+      - WORDPRESS_DB_USER=${MYSQL_USER}
+      - WORDPRESS_DB_PASSWORD=${MYSQL_PASSWORD}
+      - WORDPRESS_DB_NAME=${MYSQL_DATABASE}
+      - WORDPRESS_DB_PORT=${MYSQL_PORT}
+      - WORDPRESS_DB_CHARSET=utf8mb4
+      - WORDPRESS_DB_COLLATE=utf8mb4_unicode_ci
+      - WORDPRESS_TABLE_PREFIX=wp_
+      - WORDPRESS_DEBUG=false
+      - WORDPRESS_CONFIG_EXTRA=
+      - WORDPRESS_MEMORY_LIMIT=1024M
+      - WORDPRESS_MAX_EXECUTION_TIME=300
+    expose:
+      - 80
+    volumes:
+      - wordpress_data:/var/www/html
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker
+
+volumes:
+  wordpress_data: {}
